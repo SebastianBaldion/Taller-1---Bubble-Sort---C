@@ -1,33 +1,27 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
 
-# Precompiled Headers
-*.gch
-*.pch
+    int main(){
+    int array[100], j, i, d, x;
+    printf("Ingrese la magnitud del arreglo: \n");
+    scanf("%d", &j);
+    printf("Ingrese %d los datos sin importar el orden: \n", j);
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
+    for (i = 0; i < j; i++)
+        scanf("%d", &array[i]);
+    for (i = 0 ; i < ( j - 1 ); i++)
+    {
+        for (d = 0 ; d < j - i - 1; d++)
+    {
+    if (array[d] > array[d+1])
+    {
+        x = array[d];
+        array[d] = array[d+1];
+        array[d+1] = x;
+        }
+    }
+}
+    printf("Sus datos ordenados son:\n");
+    for ( i = 0 ; i < j ; i++ )
+        printf("%d\n", array[i]);
+    return 0;
+}
